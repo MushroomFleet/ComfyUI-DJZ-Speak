@@ -1,0 +1,874 @@
+{
+  "id": "25d6e87b-c716-4f2b-a220-684fab3b737c",
+  "revision": 0,
+  "last_node_id": 21,
+  "last_link_id": 36,
+  "nodes": [
+    {
+      "id": 10,
+      "type": "VideoTimecode",
+      "pos": [
+        1647.1932373046875,
+        403.9687805175781
+      ],
+      "size": [
+        271.408203125,
+        226
+      ],
+      "flags": {},
+      "order": 13,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 28
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            13
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "djz-nodes",
+        "ver": "58baa825b8eb2055b9841665cb662bad9689700c",
+        "Node name for S&R": "VideoTimecode"
+      },
+      "widgets_values": [
+        30,
+        "00:00:00:00",
+        "default",
+        128,
+        "top",
+        "white",
+        0.5,
+        false
+      ]
+    },
+    {
+      "id": 9,
+      "type": "VideoTrails",
+      "pos": [
+        1649.869140625,
+        717.4080200195312
+      ],
+      "size": [
+        270,
+        154
+      ],
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 31
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            28
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "djz-nodes",
+        "ver": "58baa825b8eb2055b9841665cb662bad9689700c",
+        "Node name for S&R": "VideoTrails"
+      },
+      "widgets_values": [
+        0.85,
+        0.15,
+        1,
+        0.05,
+        0
+      ]
+    },
+    {
+      "id": 15,
+      "type": "AudioFeatureExtractor",
+      "pos": [
+        1042.5506591796875,
+        329.30010986328125
+      ],
+      "size": [
+        319.0943298339844,
+        174
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "link": 22
+        }
+      ],
+      "outputs": [
+        {
+          "name": "feature",
+          "type": "FEATURE",
+          "links": [
+            29
+          ]
+        },
+        {
+          "name": "frame_count",
+          "type": "INT",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui_ryanonyheinside",
+        "ver": "2.0.12",
+        "Node name for S&R": "AudioFeatureExtractor"
+      },
+      "widgets_values": [
+        "rms_energy",
+        30,
+        150,
+        512,
+        512
+      ]
+    },
+    {
+      "id": 19,
+      "type": "ImpactSwitch",
+      "pos": [
+        669.3568115234375,
+        489.2454833984375
+      ],
+      "size": [
+        270,
+        122
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "input1",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": 32
+        },
+        {
+          "name": "input2",
+          "type": "IMAGE",
+          "link": 33
+        },
+        {
+          "name": "input3",
+          "type": "IMAGE",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "label": "IMAGE",
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            34
+          ]
+        },
+        {
+          "name": "selected_label",
+          "type": "STRING",
+          "links": null
+        },
+        {
+          "name": "selected_index",
+          "type": "INT",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-impact-pack",
+        "ver": "2346b677666e14ad53a6e65e16a33289a78106c7",
+        "Node name for S&R": "ImpactSwitch"
+      },
+      "widgets_values": [
+        2,
+        false
+      ]
+    },
+    {
+      "id": 2,
+      "type": "SaveAudio",
+      "pos": [
+        666.9061279296875,
+        308.4774475097656
+      ],
+      "size": [
+        270,
+        112
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "link": 1
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.39",
+        "Node name for S&R": "SaveAudio"
+      },
+      "widgets_values": [
+        "audio/ComfyUI"
+      ]
+    },
+    {
+      "id": 18,
+      "type": "FlexVideoSeek",
+      "pos": [
+        1071.2017822265625,
+        571.8233642578125
+      ],
+      "size": [
+        272.9380798339844,
+        174
+      ],
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 34
+        },
+        {
+          "name": "opt_feature",
+          "shape": 7,
+          "type": "FEATURE",
+          "link": 29
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            31
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui_ryanonyheinside",
+        "ver": "2.0.12",
+        "Node name for S&R": "FlexVideoSeek"
+      },
+      "widgets_values": [
+        1,
+        0,
+        "seek",
+        "relative",
+        false
+      ]
+    },
+    {
+      "id": 8,
+      "type": "VHS_Effect_v2",
+      "pos": [
+        -914.6333618164062,
+        681.892578125
+      ],
+      "size": [
+        294.06640625,
+        250
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 26
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            9
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "djz-nodes",
+        "ver": "58baa825b8eb2055b9841665cb662bad9689700c",
+        "Node name for S&R": "VHS_Effect_v2"
+      },
+      "widgets_values": {
+        "composite_preemphasis": 3,
+        "vhs_out_sharpen": 2.5,
+        "color_bleeding": 5,
+        "video_noise": 1000,
+        "chroma_noise": 5000,
+        "chroma_phase_noise": 25,
+        "enable_ringing": true,
+        "ringing_power": 2,
+        "tape_speed": "LP"
+      }
+    },
+    {
+      "id": 13,
+      "type": "VideoPyramidV1",
+      "pos": [
+        -902.060302734375,
+        264.54156494140625
+      ],
+      "size": [
+        280.7242126464844,
+        346
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 4,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "links": [
+            26
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "djz-nodes",
+        "ver": "58baa825b8eb2055b9841665cb662bad9689700c",
+        "Node name for S&R": "VideoPyramidV1"
+      },
+      "widgets_values": [
+        512,
+        512,
+        30,
+        150,
+        1.5,
+        5,
+        75,
+        0.02,
+        0.03,
+        0.01,
+        "rainbow",
+        "solid",
+        "dynamic"
+      ]
+    },
+    {
+      "id": 1,
+      "type": "DJZSpeak_v1",
+      "pos": [
+        311.84228515625,
+        239.424560546875
+      ],
+      "size": [
+        270,
+        130
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "links": [
+            1,
+            4,
+            22
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "DJZSpeak_v1"
+      },
+      "widgets_values": [
+        "This is an Example of saying anything",
+        "modern_ai",
+        140,
+        35
+      ]
+    },
+    {
+      "id": 5,
+      "type": "CreateVideo",
+      "pos": [
+        1652.39892578125,
+        221.64974975585938
+      ],
+      "size": [
+        270,
+        78
+      ],
+      "flags": {},
+      "order": 14,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 13
+        },
+        {
+          "name": "audio",
+          "shape": 7,
+          "type": "AUDIO",
+          "link": 4
+        }
+      ],
+      "outputs": [
+        {
+          "name": "VIDEO",
+          "type": "VIDEO",
+          "links": [
+            2
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.39",
+        "Node name for S&R": "CreateVideo"
+      },
+      "widgets_values": [
+        30
+      ]
+    },
+    {
+      "id": 7,
+      "type": "VHS_Effect_V3",
+      "pos": [
+        -582.1361083984375,
+        679.0164794921875
+      ],
+      "size": [
+        294.06640625,
+        274
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 9
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            32,
+            35
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "djz-nodes",
+        "ver": "58baa825b8eb2055b9841665cb662bad9689700c",
+        "Node name for S&R": "VHS_Effect_V3"
+      },
+      "widgets_values": {
+        "tape_speed": "LP",
+        "composite_preemphasis": 4,
+        "noise_line_intensity": 0.8,
+        "noise_line_thickness": 2,
+        "noise_line_count": 1,
+        "distortion_bands": 3,
+        "max_band_offset": 10,
+        "color_bleed_strength": 0.30000000000000004,
+        "color_bleed_offset": 2,
+        "sharpen_amount": 1.5
+      }
+    },
+    {
+      "id": 21,
+      "type": "SaveVideo",
+      "pos": [
+        -201.0773162841797,
+        285.968505859375
+      ],
+      "size": [
+        396.7355651855469,
+        364.5702819824219
+      ],
+      "flags": {},
+      "order": 11,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "video",
+          "type": "VIDEO",
+          "link": 36
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.39",
+        "Node name for S&R": "SaveVideo"
+      },
+      "widgets_values": [
+        "video/ComfyUI",
+        "mp4",
+        "h264"
+      ]
+    },
+    {
+      "id": 20,
+      "type": "CreateVideo",
+      "pos": [
+        -543.4822387695312,
+        287.7354736328125
+      ],
+      "size": [
+        270,
+        78
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 35
+        },
+        {
+          "name": "audio",
+          "shape": 7,
+          "type": "AUDIO",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "VIDEO",
+          "type": "VIDEO",
+          "links": [
+            36
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.39",
+        "Node name for S&R": "CreateVideo"
+      },
+      "widgets_values": [
+        30
+      ]
+    },
+    {
+      "id": 16,
+      "type": "LoadVideo",
+      "pos": [
+        329.91851806640625,
+        714.5275268554688
+      ],
+      "size": [
+        274.080078125,
+        228.1700439453125
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "VIDEO",
+          "type": "VIDEO",
+          "links": [
+            24
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.39",
+        "Node name for S&R": "LoadVideo"
+      },
+      "widgets_values": [
+        "ComfyUI_00010_.mp4",
+        "image"
+      ]
+    },
+    {
+      "id": 17,
+      "type": "GetVideoComponents",
+      "pos": [
+        370.7730712890625,
+        583.2639770507812
+      ],
+      "size": [
+        185.17733764648438,
+        66
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "video",
+          "type": "VIDEO",
+          "link": 24
+        }
+      ],
+      "outputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "links": [
+            33
+          ]
+        },
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "links": null
+        },
+        {
+          "name": "fps",
+          "type": "FLOAT",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.39",
+        "Node name for S&R": "GetVideoComponents"
+      }
+    },
+    {
+      "id": 4,
+      "type": "SaveVideo",
+      "pos": [
+        2002.8409423828125,
+        219.2951202392578
+      ],
+      "size": [
+        694.2562255859375,
+        792.2562255859375
+      ],
+      "flags": {},
+      "order": 15,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "video",
+          "type": "VIDEO",
+          "link": 2
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.39",
+        "Node name for S&R": "SaveVideo"
+      },
+      "widgets_values": [
+        "video/ComfyUI",
+        "mp4",
+        "h264"
+      ]
+    }
+  ],
+  "links": [
+    [
+      1,
+      1,
+      0,
+      2,
+      0,
+      "AUDIO"
+    ],
+    [
+      2,
+      5,
+      0,
+      4,
+      0,
+      "VIDEO"
+    ],
+    [
+      4,
+      1,
+      0,
+      5,
+      1,
+      "AUDIO"
+    ],
+    [
+      9,
+      8,
+      0,
+      7,
+      0,
+      "IMAGE"
+    ],
+    [
+      13,
+      10,
+      0,
+      5,
+      0,
+      "IMAGE"
+    ],
+    [
+      22,
+      1,
+      0,
+      15,
+      0,
+      "AUDIO"
+    ],
+    [
+      24,
+      16,
+      0,
+      17,
+      0,
+      "VIDEO"
+    ],
+    [
+      26,
+      13,
+      0,
+      8,
+      0,
+      "IMAGE"
+    ],
+    [
+      28,
+      9,
+      0,
+      10,
+      0,
+      "IMAGE"
+    ],
+    [
+      29,
+      15,
+      0,
+      18,
+      1,
+      "FEATURE"
+    ],
+    [
+      31,
+      18,
+      0,
+      9,
+      0,
+      "IMAGE"
+    ],
+    [
+      32,
+      7,
+      0,
+      19,
+      0,
+      "*"
+    ],
+    [
+      33,
+      17,
+      0,
+      19,
+      1,
+      "IMAGE"
+    ],
+    [
+      34,
+      19,
+      0,
+      18,
+      0,
+      "IMAGE"
+    ],
+    [
+      35,
+      7,
+      0,
+      20,
+      0,
+      "IMAGE"
+    ],
+    [
+      36,
+      20,
+      0,
+      21,
+      0,
+      "VIDEO"
+    ]
+  ],
+  "groups": [
+    {
+      "id": 1,
+      "title": "generate the intial loop",
+      "bounding": [
+        -924.6333618164062,
+        190.94195556640625,
+        1145.530517578125,
+        795.3193969726562
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "id": 2,
+      "title": "Speech Anims",
+      "bounding": [
+        298.787841796875,
+        145.6951141357422,
+        2408.309326171875,
+        875.856201171875
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    }
+  ],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.3732059041677889,
+      "offset": [
+        1136.0324240098284,
+        1433.4458657561715
+      ]
+    },
+    "frontendVersion": "1.23.4",
+    "VHS_latentpreview": false,
+    "VHS_latentpreviewrate": 0,
+    "VHS_MetadataImage": true,
+    "VHS_KeepIntermediate": true
+  },
+  "version": 0.4
+}
