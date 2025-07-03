@@ -90,12 +90,25 @@ brew install espeak-ng
 ### Step 3: Verify Installation
 
 1. Start ComfyUI
-2. Look for "DJZ-Speak TTS v1" in the "Text-to-Speech" category
+2. Look for "DJZ-Speak TTS v1" and "DJZ-Speak TTS v2" in the "Text-to-Speech" category
 3. Create a node and test with default settings
+
+## Available Nodes
+
+### DJZ-Speak TTS v1 (Basic)
+- **Input**: Text string, voice preset, speed (80-300), pitch (0-99)
+- **Output**: Audio tensor compatible with ComfyUI audio nodes
+- **Features**: 26 robotic voice presets, real-time synthesis, authentic machine voices
+
+### DJZ-Speak TTS v2 (With Effects)
+- **Input**: Text string, voice preset, speed, pitch, effects toggle, effect parameters
+- **Output**: Audio tensor with optional robotic effects processing
+- **Features**: All v1 features plus authentic robotic effects pipeline
+- **Effects**: Frequency filtering, harmonic enhancement, mechanical artifacts
 
 ## Usage
 
-### Basic Usage
+### Basic Usage (v1 Node)
 
 1. **Add the Node**: Search for "DJZ-Speak TTS v1" in ComfyUI's node browser
 2. **Enter Text**: Type your text in the text input field
@@ -105,8 +118,20 @@ brew install espeak-ng
    - **Pitch**: 0-99 (pitch level)
 5. **Connect Output**: Connect the AUDIO output to other audio processing nodes
 
-### Example Workflow
+### Advanced Usage (v2 Node with Effects)
 
+1. **Add the Node**: Search for "DJZ-Speak TTS v2" in ComfyUI's node browser
+2. **Configure Basic Parameters**: Text, voice, speed, pitch (same as v1)
+3. **Enable Effects**: Toggle the "effects" parameter to true
+4. **Fine-tune Effects** (optional):
+   - **Effect Intensity**: 0.5-2.0 (overall effect strength)
+   - **Frequency Filter**: Enable/disable vintage computer filtering
+   - **Harmonic Boost**: 1.0-2.0 (metallic enhancement level)
+5. **Connect Output**: Enhanced robotic audio with authentic machine characteristics
+
+### Example Workflows
+
+**Basic Robotic Voice (v1):**
 ```
 Text Input → DJZ-Speak TTS v1 → Audio Output
                 ↓
@@ -114,6 +139,42 @@ Text Input → DJZ-Speak TTS v1 → Audio Output
          [Speed: 100]
          [Pitch: 20]
 ```
+
+**Enhanced Robotic Voice (v2):**
+```
+Text Input → DJZ-Speak TTS v2 → Audio Output
+                ↓
+         [Voice: "vintage_computer"]
+         [Speed: 130]
+         [Pitch: 40]
+         [Effects: True]
+         [Intensity: 1.5]
+         [Filter: True]
+         [Harmonic: 1.4]
+```
+
+### Effects Processing (v2 Only)
+
+The v2 node includes authentic robotic effects based on the original DJZ-Speak project:
+
+**Frequency Filtering:**
+- Simulates vintage computer sound by emphasizing mid-frequencies (300Hz-3kHz range)
+- Creates the characteristic "tinny" sound of early computer speech
+- Can be toggled on/off independently
+
+**Harmonic Enhancement:**
+- Adds metallic timbre through controlled harmonic distortion
+- Creates the "mechanical" quality of robotic voices
+- Adjustable from 1.0 (no enhancement) to 2.0 (strong metallic sound)
+
+**Mechanical Artifacts:**
+- Applies quantization effects to simulate digital processing limitations
+- Creates subtle "digital" artifacts characteristic of vintage TTS systems
+- Intensity controlled by the main effect intensity parameter
+
+**When to Use Effects:**
+- **Enable for**: Vintage computer content, retro gaming, authentic robot characters
+- **Disable for**: Modern AI assistants, clean robotic speech, professional applications
 
 ### Voice Categories
 
