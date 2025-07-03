@@ -1,0 +1,19 @@
+# DJZ-Speak ComfyUI Node Dependencies
+# Based on DJZ-Speak requirements with ComfyUI compatibility
+
+# Core audio processing
+numpy>=1.21.0
+torch>=1.9.0
+
+# Audio file handling
+soundfile>=0.12.1
+
+# Optional: Enhanced audio processing (from DJZ-Speak)
+pydub>=0.25.1
+PyYAML>=6.0
+
+# System requirements (install separately):
+# - eSpeak-NG text-to-speech engine
+#   Windows: Download from https://github.com/espeak-ng/espeak-ng/releases
+#   Linux: sudo apt install espeak-ng espeak-ng-data
+#   macOS: brew install espeak-ng
